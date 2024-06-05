@@ -17,6 +17,7 @@ from tokenizer import Tokenizer
 
 test_ckpt_dir = "test"
 
+
 def download_file(url, filename):
     print(f"Downloading {url} to {filename}")
     response = requests.get(url, stream=True)
@@ -25,6 +26,9 @@ def download_file(url, filename):
         for chunk in response.iter_content(chunk_size=8192):
             file.write(chunk)
 
+def upload_file(url, file_name):
+    os.env()
+    
 def attempt_download_files():
     os.makedirs(test_ckpt_dir, exist_ok=True)
     root_url = "https://huggingface.co/karpathy/tinyllamas/resolve/main/stories260K"
